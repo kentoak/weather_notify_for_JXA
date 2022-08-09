@@ -14,5 +14,5 @@ var jsonData = JSON.parse(ans)
 var describeToday = jsonData['forecasts'][0]['date'] + '：' + jsonData['forecasts'][0]['detail']['weather']+"\n"+'最高気温：' + jsonData['forecasts'][0]['temperature']['max']['celsius'] + '度，'+'最低気温：' + jsonData['forecasts'][0]['temperature']['min']['celsius'] + '度'//通常当日の最低気温は５～６時頃に出ることが多いため、当日の予報が発表されたときには、ちょうど外の気温が最低気温あたり（５時予報）、もしくは、すでに最低気温が記録された後（１１時、１７時予報）ということが多いので、今の気温、もしくは過去の気温では、予報になりません
 var describeTomorrow = jsonData['forecasts'][1]['date'] + '：'+ jsonData['forecasts'][1]['detail']['weather']+"\n"+'最高気温：' + jsonData['forecasts'][1]['temperature']['max']['celsius'] + '度，'+'最低気温：' + jsonData['forecasts'][1]['temperature']['min']['celsius'] + '度'
 app.displayNotification(describeToday+"\n\n"+describeTomorrow,{withTitle:'＜'+jsonData['location']['city'] + 'の天気＞'})
-app.displayDialog('＜'+jsonData['location']['city'] + 'の天気＞\n'+describeToday+"\n\n"+describeTomorrow,{withIcon:Path("/Users/kt/Downloads/Tenki_svg/"+JSON.stringify(jsonData['forecasts'][0]['image']['url']).substr(-8,3)+".png"),buttons: ["OK"],defaultButton:"OK"})
+app.displayDialog('＜'+jsonData['location']['city'] + 'の天気＞\n'+describeToday+"\n\n"+describeTomorrow,{withIcon:Path("./Tenki_svg/"+JSON.stringify(jsonData['forecasts'][0]['image']['url']).substr(-8,3)+".png"),buttons: ["OK"],defaultButton:"OK"})
 
