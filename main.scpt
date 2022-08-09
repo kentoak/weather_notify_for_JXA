@@ -1,7 +1,7 @@
 var app = Application.currentApplication()
 app.includeStandardAdditions = true
 var baseURL = '"https://weather.tsukumijima.net/api/forecast/city/'
-var cityChoice = app.displayDialog("都市を選択", {withIcon:Path('/Users/kt/Downloads/kanako.icns'), buttons: ["Cancel", "Tokyo", "Sapporo"], cancelButton: 'Cancel', defaultButton:"Tokyo"}).buttonReturned
+var cityChoice = app.displayDialog("都市を選択", {withIcon:1), buttons: ["Cancel", "Tokyo", "Sapporo"], cancelButton: 'Cancel', defaultButton:"Tokyo"}).buttonReturned
 var city="130010"//都市コードはhttps://weather.tsukumijima.net/primary_area.xml を参照
 if(cityChoice==="Tokyo"){
 	city="130010"
